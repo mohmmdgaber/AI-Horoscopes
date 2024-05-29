@@ -27,7 +27,7 @@ const Dropdown_Menu =(props) => {
     <DropdownTrigger>
       <Button 
         variant="bordered" 
-        className="capitalize"
+        className="capitalize text-white"
       >
         {selectedValue}
       </Button>
