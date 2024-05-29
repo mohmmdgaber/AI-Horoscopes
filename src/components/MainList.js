@@ -18,7 +18,7 @@ const MainList = ({menu,readingsList}) => {
       
       readingsList.length ? 
       
-      readingsList.map((parseData) => (  <div key={parseData.sign}>  { <ListComponent name={parseData.sign} img={"\\static\\"+parseData.sign+".svg"} reading={parseData.reading}/> } </div>  )) :
+      readingsList.map((parseData) => (  <div key={parseData.sign}>  { <ListComponent name={parseData.sign} img={".\\static\\"+parseData.sign+".svg"} reading={parseData.reading}/> } </div>  )) :
 
       <h1 className="text-white">Loading...</h1>
 
