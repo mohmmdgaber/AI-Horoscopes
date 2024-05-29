@@ -9,13 +9,13 @@ const TextBlock = ({reading,contType}) => {
 
     const {currentFont,setCurrentFont} = useContext(FontContext);
 
-    const basisAddon=contType ?" text-l ": " text-xs ";
+    const basisAddon=contType ? " text-l ": " text-xs ";
 
     
 
 
   return (
-    <div className={currentFont+basisAddon+ "  break-normal min-w-1/2 mx-16 py-3 basis-4/5" }>
+    <div className={currentFont+basisAddon+ "  break-normal max-w-1/2 px-2 py-3 basis-4/5" }>
 
       {reading}
     </div>
