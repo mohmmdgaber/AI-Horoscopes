@@ -31,7 +31,7 @@ The hosted application on vercel has a cron daily task which runs (/api/updateHo
 Currently the max-deployment rate limiting is in affect and when I can re-deploy it I'll add the link bellow
 
 
-## Screenshots that show case the application
+## Screenshots that showcase the application
 
 
 ![Screenshot 1](ss1.png)
