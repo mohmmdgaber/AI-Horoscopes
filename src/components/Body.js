@@ -10,7 +10,7 @@ import {Button} from "@nextui-org/react";
 
  export const FontContext = createContext();
 
-const Body = (props) => {
+const Body = () => {
 
   const [menu, setMenu] = useState(true);
   const  [currentFont, setCurrentFont] = useState("font-sans");
