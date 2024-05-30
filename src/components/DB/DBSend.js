@@ -1,6 +1,8 @@
+//REDUNDANT
+
 export  const  handleSaveData = async (inputData) => { 
     
-    const response = await fetch(process.env.URL +'/api/saveAllData/', { 
+    const response = await fetch('/api/saveAllData/', { 
       method: 'POST', 
       headers: { 
         'Content-Type': 'application/json', 

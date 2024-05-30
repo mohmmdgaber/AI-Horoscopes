@@ -1,3 +1,6 @@
+//REDUNDANT
+
+
 import { MongoClient } from 'mongodb'; 
 import { NextResponse } from 'next/server'
 

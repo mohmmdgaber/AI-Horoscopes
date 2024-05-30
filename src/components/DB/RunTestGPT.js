@@ -1,5 +1,5 @@
 
-/// Here this can be used to update the horoscopreadings (for testing only)
+// Here this can be used to update the horoscopreadings (for testing only)
 
 
 // export const runGPT = async () => { 

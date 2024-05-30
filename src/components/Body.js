@@ -5,8 +5,6 @@ import ListControl from "@/components/ListControl"
 import {fetchAllData} from "@/components/DB/DBFetch"
 import {handleSaveData} from "@/components/DB/DBSend"
 import { useState,useContext,createContext,useEffect } from 'react'
-import {runGPT} from "@/components/DB/RunTestGPT"
-import {Button} from "@nextui-org/react";
 
  export const FontContext = createContext();
 
