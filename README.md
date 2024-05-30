@@ -14,23 +14,27 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You also need an enviorment file that contains all the api keys for: (OpenAI,MongoDB)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## How everything is built:
 
-To learn more about Next.js, take a look at the following resources:
+The architucture for this app is that it has a monodb backend where it saves the horoscopes and the date they were generated at, meaning that the horoscope readings are decoupled from the project, and on another server.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The hosted application on vercel has a cron daily task which runs (/api/updateHoroscopes), and what it does is that it utilizes the OpenAI API and establishes a connection with the mongodb database and updates the horoscope readings there, which happens every day at 9 AM.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## The state of the vercel instance
 
-## Deploy on Vercel
+Currently the max-deployment rate limiting is in affect and when I can re-deploy it I'll add the link bellow
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Screenshots that show case the application
+
+
+![Screenshot 1](ss1.png)
+![Screenshot 2](ss2.png)
+
+
