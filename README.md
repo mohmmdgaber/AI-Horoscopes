@@ -22,8 +22,11 @@ The hosted application on vercel has a cron daily task which runs (/api/updateHo
 
 ## The state of the vercel instance
 
-Currently the max-deployment rate limiting is in affect and when I can re-deploy it I'll add the link bellow
+it's currently running at:
 
+```bash
+https://ai-horoscopes.vercel.app/
+```
 
 ## Screenshots that showcase the application
 
