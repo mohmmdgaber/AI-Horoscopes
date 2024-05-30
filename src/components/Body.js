@@ -5,7 +5,6 @@ import ListControl from "@/components/ListControl"
 import {fetchAllData} from "@/components/DB/DBFetch"
 import {handleSaveData} from "@/components/DB/DBSend"
 import { useState,useContext,createContext,useEffect } from 'react'
-import { Button } from "@nextui-org/react";
  export const FontContext = createContext();
 
 const Body = (props) => {
@@ -31,13 +30,13 @@ const Body = (props) => {
   }, [])
 
 
-  const sendData=async ()=>{
+  // const sendData=async ()=>{
 
-      allData[0].sign="ass5"
+  //     allData[0].sign="ass5"
 
-      console.log(allData[0].sign);
-      await handleSaveData({"Horoscope":allData});
-  }
+  //     console.log(allData[0].sign);
+  //     await handleSaveData({"Horoscope":allData});
+  // }
 
 
   
