@@ -40,7 +40,7 @@ export default async function handler(req, res) {
 
           handleSaveData({"Horoscope":allData});
 
-          return  NextResponse.json( { message: 'Data saved successfully!'+ showTime} ,{ status:201 } )
+          return  NextResponse.json( { message: 'Data saved successfully!'+ showTime} ,{ status:200 } )
 
     
 

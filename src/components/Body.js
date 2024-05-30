@@ -35,7 +35,6 @@ const Body = (props) => {
 
       allData[0].sign="ass5"
 
-
       console.log(allData[0].sign);
       await handleSaveData({"Horoscope":allData});
   }
