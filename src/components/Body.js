@@ -30,13 +30,6 @@ const Body = (props) => {
   }, [])
 
 
-  // const sendData=async ()=>{
-
-  //     allData[0].sign="ass5"
-
-  //     console.log(allData[0].sign);
-  //     await handleSaveData({"Horoscope":allData});
-  // }
 
 
   
@@ -47,8 +40,8 @@ const Body = (props) => {
     <div >
 
       <FontContext.Provider value={{currentFont,setCurrentFont}}>
-         <ListControl toggleFunc={setMenu} menu={menu}  />
-         <MainList menu={menu} readingsList={allData} />
+         {/* <ListControl toggleFunc={setMenu} menu={menu}  />
+         <MainList menu={menu} readingsList={allData} /> */}
 
 
       </FontContext.Provider>
