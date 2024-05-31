@@ -2,6 +2,8 @@ import { MongoClient } from 'mongodb';
 import { NextResponse,NextRequest } from 'next/server'
 import { revalidatePath } from 'next/cache';
 
+
+export const revalidate = 60;
 require('dotenv').config()
  
 export  async function GET(req) {
@@ -14,8 +16,8 @@ export  async function GET(req) {
       const collection = database.collection('horoscopesproject'); 
       const allData = await collection.find({}).toArray(); 
 
-      const path =req.nextUrl.searchParams.get('path') || '/';
-      revalidatePath(path);
+      // const path =req.nextUrl.searchParams.get('path') || '/';
+      // revalidatePath(path);
   
       return  NextResponse.json( allData ,{ status:200 } );
 
