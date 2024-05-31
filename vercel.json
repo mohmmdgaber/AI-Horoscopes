@@ -1,9 +1,10 @@
 
 {
+  
     "crons": [
       {
         "path": "/api/updateHoroscopes",
-        "schedule":"0 15 * * *"
+        "schedule":"10 15 * * *"
       }
     ]
 }

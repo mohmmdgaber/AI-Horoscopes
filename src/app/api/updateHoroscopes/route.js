@@ -5,7 +5,7 @@ import { MongoClient } from 'mongodb';
 import { revalidatePath } from 'next/cache';
 
 
-
+export const maxDuration = 60; 
 export  async function GET(req,res) {
 
                 
