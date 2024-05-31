@@ -2,6 +2,8 @@
 require('dotenv').config()
 import { NextResponse } from 'next/server'
 import { MongoClient } from 'mongodb'; 
+import { revalidatePath } from 'next/cache';
+
 
 
 export  async function GET(req,res) {
@@ -17,6 +19,9 @@ export  async function GET(req,res) {
         const showDate = date.getDate() 
             + '/' + (date.getMonth()+1) 
             + "/" + date.getFullYear();
+
+        const showTime = date.getHours() 
+            + ':' + (date.getMinutes()) 
 
 
         var zodiacSigns = [
@@ -101,6 +106,11 @@ export  async function GET(req,res) {
 
         };
         await SaveToDB(formattedData)
+
+        
+       const path =req.nextUrl.searchParams.get('path') || '/';
+       revalidatePath(path);
+  
    
       
 

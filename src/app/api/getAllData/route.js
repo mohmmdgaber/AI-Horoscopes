@@ -3,7 +3,7 @@ import { NextResponse,NextRequest } from 'next/server'
 import { revalidatePath } from 'next/cache';
 
 
-export const revalidate = 60;
+export const revalidate = 3600;
 require('dotenv').config()
  
 export  async function GET(req) {
