@@ -1,9 +1,10 @@
 import { MongoClient } from 'mongodb'; 
-import { NextResponse } from 'next/server'
+import { NextResponse,NextRequest } from 'next/server'
+import { revalidatePath } from 'next/cache';
 
 require('dotenv').config()
  
-export  async function GET(res) {
+export  async function GET(req) {
   console.log("OUTFUNC"); 
   const client = new MongoClient(process.env.MONGODB_URI, { }); 
   
@@ -12,7 +13,11 @@ export  async function GET(res) {
       const database = client.db('horoscopes');  
       const collection = database.collection('horoscopesproject'); 
       const allData = await collection.find({}).toArray(); 
-      return  NextResponse.json( allData ,{ status:200 } )
+
+      const path =req.nextUrl.searchParams.get('path') || '/';
+      revalidatePath(path);
+  
+      return  NextResponse.json( allData ,{ status:200 } );
 
 
     } catch (error) { 
