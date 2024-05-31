@@ -8,19 +8,16 @@ import { revalidatePath } from 'next/cache';
 export const maxDuration = 60; 
 export  async function GET(req,res) {
                         
-        const path =req.nextUrl.searchParams.get('path') || '/';
-        revalidatePath(path);
+        
+        const authHeader = req.headers.get('authorization');
+          if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+            return new Response('Unauthorized access', {
+              status: 401,
+            });
+          }
+         
   
-
-        const authToken = (req.headers.get('authorization') || '')
-        .split('Bearer ')
-        .at(1)
-
-        // if not found OR the bearer token does NOT equal the CRON_SECRET
-        if (!authToken || authToken != process.env.AUTH_TOKEN) {
-          return NextResponse.json({ error: 'Unauthorized' }, {
-          status: 401 })
-        }
+        
 
 
 
