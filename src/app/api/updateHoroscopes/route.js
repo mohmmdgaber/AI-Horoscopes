@@ -8,6 +8,9 @@ import { revalidatePath } from 'next/cache';
 
 export  async function GET(req,res) {
 
+                
+       const path =req.nextUrl.searchParams.get('path') || '/';
+       revalidatePath(path);
   
     
         const apiKey = process.env.OPENAI_API_KEY
@@ -68,7 +71,7 @@ export  async function GET(req,res) {
 
            
           for await (const zodiacSign of zodiacSigns){
-            var messageStruct="Write a horoscope reading for the sign: "+zodiacSign.sign+", on the date of: "+showDate+", make it 2 paragraphs at max, and don't include the date and the sign in the begenning";
+            var messageStruct="Write a horoscope reading for the sign: "+zodiacSign.sign+", on the date of: "+showDate+", make it 2.5 paragraphs at max, and don't include the date and the sign in the begenning";
             const body = JSON.stringify({
             messages:[{ role: "user", content: messageStruct }],
             model: 'gpt-3.5-turbo',
@@ -107,10 +110,7 @@ export  async function GET(req,res) {
         };
         await SaveToDB(formattedData)
 
-        
-       const path =req.nextUrl.searchParams.get('path') || '/';
-       revalidatePath(path);
-  
+
    
       
 
