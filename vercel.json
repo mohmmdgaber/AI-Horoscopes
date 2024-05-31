@@ -4,7 +4,7 @@
     "crons": [
       {
         "path": "/api/updateHoroscopes",
-        "schedule":"22 17 * * *"
+        "schedule":"25 17 * * *"
       }
     ]
 }

@@ -7,6 +7,10 @@ import { revalidatePath } from 'next/cache';
 
 export const maxDuration = 60; 
 export  async function GET(req,res) {
+                        
+        const path =req.nextUrl.searchParams.get('path') || '/';
+        revalidatePath(path);
+  
 
         const authToken = (req.headers.get('authorization') || '')
         .split('Bearer ')
@@ -20,10 +24,7 @@ export  async function GET(req,res) {
 
 
 
-                
-       const path =req.nextUrl.searchParams.get('path') || '/';
-       revalidatePath(path);
-  
+
     
         const apiKey = process.env.OPENAI_API_KEY
         const url = 'https://api.openai.com/v1/chat/completions'
